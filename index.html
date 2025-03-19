@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Master Бийск - ремонт техники Apple</title>
+  <meta name="description" content="Профессиональный ремонт техники Apple в Бийске. Ремонт iPhone, MacBook, iPad, Apple Watch. Замена экрана и аккумулятора iPhone. Гарантия качества и быстрый сервис.">
+  <meta name="keywords" content="ремонт iPhone Бийск, ремонт MacBook, ремонт Apple Watch, замена экрана iPhone, замена аккумулятора iPhone, сервисный центр Apple">
+  <!-- Подключение Font Awesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Подключение основного файла стилей -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Шапка сайта с навигацией -->
+  <header>
+    <div class="container">
+      <!-- Логотип всегда кислотного цвета -->
+      <a href="#hero" class="logo">Apple Master</a>
+      <!-- Навигация с переключателем темы -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#calculator">Калькулятор ремонта</a></li>
+          <li><a href="#promotions">Акции</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#blog">Полезные советы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+          <li class="theme-toggle"><a href="javascript:void(0)" id="themeToggle" title="Переключить тему"><i id="themeToggleIcon" class="fas fa-moon"></i></a></li>
+        </ul>
+        <!-- Кнопка-гамбургер для мобильного меню -->
+        <a href="javascript:void(0)" id="menuToggle"><i id="menuIcon" class="fas fa-bars"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero-секция с эффектом набора текста -->
+  <section id="hero" class="hero block-style">
+    <!-- Анимированный фон (частицы) -->
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <!-- Содержимое Hero -->
+    <div class="hero-content container">
+      <h1><span id="typewriter"></span></h1>
+      <p>Сервисный центр Apple Master – быстрый и качественный ремонт техники Apple</p>
+      <button class="btn primary-btn" id="openModal">Оставить заявку</button>
+    </div>
+  </section>
+
+  <!-- Блок Услуг -->
+  <section id="services" class="section fade-in block-style">
+    <div class="container services-intro">
+      <div class="text">
+        <h2>Наши услуги</h2>
+        <p>
+          <strong>Apple Master</strong> – профессиональный сервисный центр Apple. Мы предлагаем быстрый и качественный ремонт устройств Apple любой сложности. Наши специалисты выполняют ремонт iPhone, MacBook, iPad и Apple Watch. В список услуг входит замена экрана, аккумулятора и многое другое. Мы работаем в Бийске и ценим доверие каждого клиента.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/services-banner.jpg" alt="Наши услуги – ремонт техники" loading="lazy">
+      </div>
+    </div>
+    <div class="container">
+      <div class="device-services">
+        <div class="device">
+          <i class="fas fa-mobile-alt"></i>
+          <p>Ремонт iPhone</p>
+        </div>
+        <div class="device">
+          <i class="fas fa-tablet-alt"></i>
+          <p>Ремонт iPad</p>
+        </div>
+        <div class="device">
+          <i class="fas fa-laptop"></i>
+          <p>Ремонт MacBook</p>
+        </div>
+        <div class="device">
+          <i class="fas fa-clock"></i>
+          <p>Ремонт Apple Watch</p>
+        </div>
+      </div>
+      <h3>Почему выбирают нас</h3>
+      <div class="advantages">
+        <div class="adv-item">
+          <i class="fas fa-user"></i>
+          <p><strong>5 лет опыта</strong></p>
+        </div>
+        <div class="adv-item">
+          <i class="fas fa-award"></i>
+          <p><strong>Гарантия 6 мес.</strong></p>
+        </div>
+        <div class="adv-item">
+          <i class="fas fa-cogs"></i>
+          <p><strong>Оригинальные детали</strong></p>
+        </div>
+        <div class="adv-item">
+          <i class="fas fa-bolt"></i>
+          <p><strong>Срочный ремонт</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Раздел: Калькулятор ремонта (на всю ширину с анимированным фоном) -->
+  <section id="calculator" class="section fade-in block-style">
+    <div class="calculator-fullwidth">
+      <div class="container calculator-container">
+        <h2>Калькулятор ремонта</h2>
+        <p>Узнайте примерную стоимость ремонта вашего устройства. Выберите бренд и тип поломки – ориентировочная цена указана <strong>от</strong> базовой стоимости. Точную цену уточняйте в нашем сервисном центре.</p>
+        <form id="repairCalculatorForm">
+          <div class="form-group">
+            <label for="brand">Выберите бренд устройства:</label>
+            <select id="brand" name="brand" required>
+              <option value="">-- Выберите бренд --</option>
+              <option value="Apple">Apple</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Xiaomi">Xiaomi</option>
+              <option value="Huawei">Huawei</option>
+              <option value="OnePlus">OnePlus</option>
+              <option value="Google">Google</option>
+              <option value="Sony">Sony</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="repairType">Выберите тип поломки:</label>
+            <select id="repairType" name="repairType" required>
+              <option value="">-- Выберите тип ремонта --</option>
+              <option value="screen">Замена экрана</option>
+              <option value="battery">Замена аккумулятора</option>
+              <option value="buttons">Ремонт кнопок</option>
+              <option value="water">Ремонт после воды</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="calculator-buttons">
+            <button type="button" class="btn primary-btn" id="calcRepairBtn">Рассчитать</button>
+          </div>
+        </form>
+        <div class="calculator-action">
+          <button type="button" class="btn primary-btn" id="openModalFromCalc">Оставить заявку</button>
+        </div>
+        <div class="calc-result-container">
+          <div id="repairCalcResult" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Раздел акций -->
+  <section id="promotions" class="section fade-in block-style">
+    <div class="container">
+      <h2>Акции</h2>
+      <div class="promotions-cards">
+        <div class="promo-card">
+          <h3><i class="fas fa-tag"></i> Скидка 20% на замену аккумулятора iPhone</h3>
+          <p>Акция до конца месяца</p>
+        </div>
+        <div class="promo-card">
+          <h3><i class="fas fa-tag"></i> Бесплатная диагностика MacBook</h3>
+          <p>При любой поломке – подробности уточняйте у специалистов</p>
+        </div>
+        <div class="promo-card">
+          <h3><i class="fas fa-tag"></i> -15% на первый ремонт для новых клиентов</h3>
+          <p>Скажите промокод: APPLE15</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Раздел отзывов с расширенными текстами -->
+  <section id="reviews" class="section fade-in block-style">
+    <div class="container">
+      <h2>Отзывы клиентов</h2>
+      <div class="reviews-slider">
+        <figure class="review active">
+          <blockquote>
+            Спасибо Apple Master за быструю замену экрана моего iPhone! Сделали всё за 30 минут, а после ремонта устройство работает как новое. Очень доволен качеством и скоростью сервиса.
+          </blockquote>
+          <figcaption>- Алексей</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>
+            Отличный сервис. Вернули к жизни мой MacBook, когда я уже думал, что ему конец. Профессионализм и внимательное отношение к клиенту – рекомендую всем знакомым!
+          </blockquote>
+          <figcaption>- Мария</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>
+            Приятно удивлён уровнем обслуживания. После ремонта iPhone стал работать быстрее, а дизайн устройства сохранился без изменений. Спасибо за качественную работу!
+          </blockquote>
+          <figcaption>- Дмитрий</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>
+            Честные цены и быстрое обслуживание. Меняла аккумулятор на iPhone — сделали за час, а затем провели бесплатную диагностику. Теперь устройство работает стабильно.
+          </blockquote>
+          <figcaption>- Екатерина</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Раздел блога с модальными окнами для статей -->
+  <section id="blog" class="section fade-in block-style">
+    <div class="container">
+      <h2>Полезные советы</h2>
+      <div class="blog-cards">
+        <article class="blog-card">
+          <img src="images/blog1.jpg" alt="Как ухаживать за техникой после ремонта" class="blog-img">
+          <h3>Как ухаживать за техникой после ремонта</h3>
+          <p>Узнайте, как правильно эксплуатировать устройство после ремонта, чтобы продлить срок службы и сохранить его работоспособность.</p>
+          <a href="javascript:void(0)" class="read-more" data-title="Как ухаживать за техникой после ремонта" data-content="Полный текст статьи: После ремонта техника требует особого внимания. В данной статье мы рассказываем о том, как правильно ухаживать за устройствами – от регулярной чистки до обновления программного обеспечения. Соблюдение простых рекомендаций поможет сохранить работоспособность и внешний вид вашего девайса на долгие годы.">Читать далее &rarr;</a>
+        </article>
+        <article class="blog-card">
+          <img src="images/blog2.jpg" alt="Чистка от пыли: рекомендации профессионалов" class="blog-img">
+          <h3>Чистка от пыли: рекомендации профессионалов</h3>
+          <p>Узнайте, как правильно очищать устройство, чтобы избежать перегрева и преждевременного износа комплектующих.</p>
+          <a href="javascript:void(0)" class="read-more" data-title="Чистка от пыли: рекомендации профессионалов" data-content="Полный текст статьи: Пыль и загрязнения негативно влияют на работу техники, вызывая перегрев и снижая производительность. В статье подробно описаны методы профессиональной чистки, а также советы, как самостоятельно поддерживать чистоту устройства без риска повредить его компоненты.">Читать далее &rarr;</a>
+        </article>
+        <article class="blog-card">
+          <img src="images/blog3.jpg" alt="Важные нюансы эксплуатации устройств" class="blog-img">
+          <h3>Важные нюансы эксплуатации устройств</h3>
+          <p>Полезные рекомендации по использованию техники, которые помогут избежать частых поломок и продлить срок службы.</p>
+          <a href="javascript:void(0)" class="read-more" data-title="Важные нюансы эксплуатации устройств" data-content="Полный текст статьи: Эксплуатация техники – это не только польза, но и определённые нюансы. В статье мы рассказываем, на что стоит обратить внимание при ежедневном использовании, какие ошибки чаще всего совершают пользователи и как их избежать для надежной работы устройства.">Читать далее &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал с контактами, обновлённым адресом и картой -->
+  <footer id="contact" class="fade-in block-style">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p><strong>Адрес:</strong> Бийск, ул. Ильи Мухачева 236 офис 5</p>
+      <p><strong>Телефон:</strong> <a href="tel:+79059877757">+7 (905) 987-77-57</a></p>
+      <p><strong>Часы работы:</strong> ежедневно с 9:00 до 20:00</p>
+    </div>
+    <div class="container">
+      <p>Мы всегда на связи в мессенджерах:</p>
+      <p>WhatsApp / Viber / Telegram – напишите нам в любой момент!</p>
+    </div>
+    <div class="container">
+      <p>&copy; 2025 Apple Master</p>
+    </div>
+    <div class="container">
+      <div id="yandexMap" class="map-container"></div>
+    </div>
+  </footer>
+
+  <!-- Плавающие кнопки мессенджеров -->
+  <div class="chat-buttons">
+    <a href="viber://chat?number=79059877757" class="chat-btn viber" target="_blank" title="Написать в Viber"><i class="fab fa-viber"></i></a>
+    <a href="https://wa.me/79059877757" class="chat-btn whatsapp" target="_blank" title="Написать в WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tg://msg?to=79059877757" class="chat-btn telegram" target="_blank" title="Написать в Telegram"><i class="fab fa-telegram-plane"></i></a>
+  </div>
+
+  <!-- Модальное окно для заявки -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Оставить заявку</h3>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="text" name="device" placeholder="Ваше устройство (модель)" required>
+        <textarea name="issue" placeholder="Опишите проблему" required></textarea>
+        <button type="submit" class="btn primary-btn submit-btn">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно для развернутой статьи -->
+  <div id="article-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close article-modal-close">&times;</button>
+      <h3 id="article-modal-title"></h3>
+      <div id="article-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- JSON-LD Разметка Schema.org для SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Apple Master",
+    "description": "Профессиональный ремонт техники Apple в Бийске. Ремонт iPhone, MacBook, iPad и Apple Watch с использованием оригинальных деталей.",
+    "image": "https://yourwebsite.com/images/logo.png",
+    "telephone": "+79059877757",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Ильи Мухачева 236 офис 5",
+      "addressLocality": "Бийск",
+      "addressRegion": "Алтайский край",
+      "postalCode": "659000",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 09:00-20:00",
+    "url": "https://yourwebsite.com",
+    "priceRange": "От 1000 руб.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "27"
+    },
+    "service": {
+      "@type": "Service",
+      "name": "Ремонт техники Apple",
+      "serviceType": "Ремонт iPhone, MacBook, iPad, Apple Watch",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Apple Master"
+      }
+    }
+  }
+  </script>
+
+  <!-- Подключение Яндекс Карт API с обновлённым адресом -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <!-- Подключение файла скриптов -->
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,656 @@
+/* Root variables for color scheme */
+:root {
+  --primary-color: #34A798;
+  --primary-color-dark: #007475;
+  --acid-green: #39FF14;
+  --bg-light: #fff;
+  --text-light: #333;
+  --bg-dark: #111;
+  --text-dark: #ddd;
+  --glass-bg-light: rgba(255, 255, 255, 0.3);
+  --glass-bg-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Универсальный стиль блока */
+.block-style {
+  background: var(--bg-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  transition: background 0.3s;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s, padding 0.3s;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  text-decoration: none;
+  /* Всегда кислотный */
+  color: var(--acid-green);
+}
+nav {
+  position: relative;
+}
+
+/* Новое оформление навигационного контейнера */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(52,167,152,0.1), rgba(52,167,152,0.3));
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+.theme-toggle a {
+  display: inline-flex;
+  align-items: center;
+}
+#menuToggle {
+  display: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+/* Header scrolled state */
+header.scrolled {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+}
+header.scrolled .nav-links a,
+header.scrolled .theme-toggle a {
+  color: #000;
+}
+/* Логотип остаётся кислотным всегда */
+header.scrolled .logo {
+  color: var(--acid-green);
+}
+header.scrolled #menuToggle {
+  color: #000;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(45deg, #005660, #34A798);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  min-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+/* Typewriter effect */
+#typewriter {
+  border-right: 2px solid #fff;
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Animated particles */
+.particle {
+  position: absolute;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+.p1 { width: 100px; height: 100px; top: 10%; left: 5%; animation: float 6s ease-in-out infinite; }
+.p2 { width: 80px; height: 80px; top: 30%; left: 80%; animation: float 8s ease-in-out infinite 2s; }
+.p3 { width: 120px; height: 120px; top: 60%; left: 10%; animation: float 7s ease-in-out infinite 4s; }
+.p4 { width: 60px; height: 60px; top: 80%; left: 50%; animation: float 5s ease-in-out infinite 1s; }
+.p5 { width: 90px; height: 90px; top: 50%; left: 90%; animation: float 9s ease-in-out infinite 3s; }
+.p6 { width: 40px; height: 40px; top: 20%; left: 60%; animation: float 4s ease-in-out infinite 5s; }
+.p7 { width: 70px; height: 70px; top: 85%; left: 15%; animation: float 8s ease-in-out infinite 7s; }
+
+@keyframes float {
+  0% { transform: translate(0,0); opacity: 0.8; }
+  50% { transform: translate(30px, -30px); opacity: 0.4; }
+  100% { transform: translate(0,0); opacity: 0.8; }
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections common */
+.section {
+  padding: 60px 20px;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* Services/About Section */
+.services-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.services-intro .text {
+  flex: 1 1 300px;
+}
+.services-intro .text h2 {
+  margin-top: 0;
+}
+.services-intro .image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.services-intro img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Device services icons */
+.device-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0;
+}
+.device {
+  flex: 1 1 150px;
+  text-align: center;
+  margin: 10px 20px;
+}
+.device i {
+  font-size: 2em;
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+.device p {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+.device:hover i {
+  transform: scale(1.1);
+}
+
+/* Advantages */
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+.adv-item {
+  flex: 1 1 150px;
+  text-align: center;
+  margin: 10px;
+}
+.adv-item i {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+.adv-item p {
+  margin-top: 0.3em;
+}
+.adv-item:hover i {
+  transform: scale(1.2);
+}
+
+/* Calculator Section */
+.calculator-fullwidth {
+  width: 100%;
+  background: linear-gradient(270deg, #34A798, #007475);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  padding: 20px 0;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.calculator-container {
+  background: var(--bg-light);
+  color: var(--text-light);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: background 0.3s, color 0.3s;
+}
+.calculator-container h2 {
+  margin-bottom: 15px;
+}
+#repairCalculatorForm .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+#repairCalculatorForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#repairCalculatorForm select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.calculator-buttons {
+  margin-top: 15px;
+}
+/* Ранее существующий стиль для результата калькулятора */
+#repairCalcResult {
+  font-size: 1.2em;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+/* Новое оформление области предварительного расчёта */
+.calc-result-container {
+  height: 50px;
+  background: rgba(52, 167, 152, 0.1);
+  border: 1px solid rgba(52, 167, 152, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+/* Promotions */
+.promotions-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.promo-card {
+  flex: 1 1 250px;
+  background: var(--bg-light);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.promo-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+.promo-card i {
+  color: var(--primary-color);
+  margin-right: 5px;
+}
+.promo-card p {
+  margin: 0;
+  color: #555;
+}
+
+/* Reviews */
+.reviews-slider {
+  position: relative;
+  min-height: 120px;
+  margin-top: 20px;
+}
+.review {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.review.active {
+  opacity: 1;
+  position: relative;
+}
+.review blockquote {
+  font-style: italic;
+  margin: 0 0 0.5em;
+}
+.review figcaption {
+  text-align: right;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Blog Section */
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.blog-card {
+  flex: 1 1 300px;
+  background: var(--bg-light);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.blog-card h3 {
+  margin-bottom: 10px;
+}
+.blog-card p {
+  margin-bottom: 10px;
+}
+.blog-card a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+/* Правило для изображений в блог-карточках */
+.blog-card img.blog-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Footer/Contact */
+footer {
+  background: #f0f0f0;
+  color: #000;
+  padding: 40px 20px;
+  transition: background 0.3s, color 0.3s;
+}
+footer .container {
+  margin-bottom: 20px;
+}
+footer h2 {
+  margin-top: 0;
+}
+footer p {
+  margin: 5px 0;
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* Map container */
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Floating chat buttons */
+.chat-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+.chat-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+.chat-btn.whatsapp { background: #25D366; }
+.chat-btn.viber { background: #59267C; }
+.chat-btn.telegram { background: #0088CC; }
+.chat-btn:hover { opacity: 0.8; }
+
+/* Modal with glass effect */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.3s;
+}
+.modal.open {
+  display: flex;
+  opacity: 1;
+}
+.modal-content {
+  background: var(--bg-light);
+  color: var(--text-light);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.modal-content h3 {
+  margin-top: 0;
+}
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal-content textarea {
+  resize: vertical;
+  height: 80px;
+}
+.modal-content .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+}
+.modal-content .btn:hover {
+  opacity: 0.9;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #aaa;
+}
+.modal-close:hover {
+  color: #000;
+}
+
+/* Кнопки (глобально) */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.primary-btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+.primary-btn:hover {
+  background: var(--primary-color-dark);
+}
+
+/* Light/Dark Theme */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+body.dark header.scrolled {
+  background: rgba(0,0,0,0.9);
+}
+body.dark .section {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+body.dark .promo-card {
+  background: #333;
+}
+body.dark .promo-card p {
+  color: #ccc;
+}
+body.dark .review figcaption {
+  color: #aaa;
+}
+body.dark footer {
+  background: #222;
+  color: #fff;
+}
+body.dark .modal-content {
+  background: #333;
+  color: #fff;
+}
+body.dark .modal-content input,
+body.dark .modal-content textarea {
+  background: #555;
+  color: #fff;
+  border: 1px solid #777;
+}
+body.dark nav .nav-links {
+  background: #333;
+  border-color: #444;
+}
+body.dark nav .nav-links a {
+  color: #fff;
+}
+/* Тематические корректировки для блог-карточек */
+body.dark .blog-card {
+  background: rgba(30,30,30,0.8);
+  color: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+body.dark .blog-card a {
+  color: var(--acid-green);
+}
+
+/* Fade-in animation on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease all;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    margin: 10px 0;
+  }
+  .nav-links a {
+    color: #000;
+    padding: 5px 0;
+  }
+  #menuToggle {
+    display: block;
+  }
+}
